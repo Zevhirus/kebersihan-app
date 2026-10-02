@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-slate-700 font-sans antialiased;
+    background-image: radial-gradient(60rem 30rem at 85% -10%, rgba(217,244,106,.35), transparent 60%),
+                      radial-gradient(50rem 30rem at -10% 0%, rgba(14,159,126,.12), transparent 60%);
+    background-attachment: fixed;
+  }
+  h1, h2 { @apply font-display; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand; }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200 active:scale-[.97] disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-brand text-white shadow-soft hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-lift; }
+  .btn-ghost { @apply btn bg-white text-navy ring-1 ring-navy/10 hover:bg-mint; }
+  .btn-danger { @apply btn bg-white text-rose-600 ring-1 ring-rose-200 hover:bg-rose-50; }
+  .input { @apply w-full rounded-xl border border-navy/10 bg-white px-3.5 py-3 text-sm transition placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/15; }
+  .card { @apply rounded-3xl bg-white ring-1 ring-navy/5 shadow-soft; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
